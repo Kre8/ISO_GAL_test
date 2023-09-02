@@ -65,13 +65,8 @@ gltf.scenes;
 gltf.cameras; 
 gltf.asset; 
 },
-function ( xhr ) {
-console.log( ( xhr.loaded / xhr.total * 200 ) + '% loaded' );
-},
 
-function ( error ) {
-console.log( 'An error happened' );
-}
+
 );
 document.addEventListener('mousemove', onDocumentMouseMove)
 
