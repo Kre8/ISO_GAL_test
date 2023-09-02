@@ -2436,57 +2436,6 @@ slides2_2[slideIndex2_2-1].style.display = "block";
 }
 </script>
 
-<!--AM_GEN-MODAL GBIF JSON-->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const jsonTable = document.getElementById('json-table');
-
-    fetch('https://www.gbif.org/api/occurrence/breakdown?advanced=false&country=AU&dataset_key=dce8feb0-6c89-11de-8225-b8a03c50a862&dataset_key=39905320-6c8a-11de-8226-b8a03c50a862&dataset_key=d0e133c0-6c8a-11de-8226-b8a03c50a862&dataset_key=a79c2b50-6c8a-11de-8226-b8a03c50a862&dataset_key=7c93d290-6c8b-11de-8226-b8a03c50a862&dataset_key=14f3151a-e95d-493c-a40d-d9938ef62954&dataset_key=fa375330-6c8a-11de-8226-b8a03c50a862&dataset_key=34e892b0-d9c7-11de-b793-b8a03c50a862&dataset_key=7931dcab-94f1-46ce-8092-56e4335423de&dataset_key=50c9509d-22c7-4a22-a47d-8c48425ef4a7&dimension=speciesKey&has_coordinate=true&has_geospatial_issue=false&limit=100&locale=en&offset=0&q=amaurobiidae')
-        .then(response => response.json())
-        .then(data => {
-            const results = data.results; // Assuming the data structure has a "results" array
-
-            if (results.length > 0) {
-                const table = createTableFromJSON(results);
-                jsonTable.appendChild(table);
-            } else {
-                jsonTable.textContent = 'No data available';
-            }
-        })
-        .catch(error => {
-            console.error('An error occurred:', error);
-        });
-});
-
-function createTableFromJSON(data) {
-    const table = document.createElement('table');
-    const columnsToShow = ['family', 'genus', 'species', 'count', 'displayName']; // Specify the columns to display
-
-    // Create table header
-    const headerRow = document.createElement('tr');
-    columnsToShow.forEach(column => {
-        const th = document.createElement('th');
-        th.textContent = column;
-        headerRow.appendChild(th);
-    });
-    table.appendChild(headerRow);
-
-    // Create table rows
-    data.forEach(item => {
-        const rowData = item._resolved;
-        const row = document.createElement('tr');
-        columnsToShow.forEach(column => {
-            const td = document.createElement('td');
-            td.textContent = rowData[column];
-            row.appendChild(td);
-        });
-        table.appendChild(row);
-    });
-
-    return table;
-}
-</script>
-
 
 <!--POPUP JQ animation-->
 <script src="./js/jquery.popup.min.js" crossorigin="anonymous"></script>
