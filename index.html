@@ -33,24 +33,28 @@ box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
 border-radius: 3px;
 pointer-events: all;
 z-index: 99;
+margin-top:10%;
 
 
 }
 
 .popup-close {
 cursor: pointer;
-right: 5px;
-top: 5px;
 position: absolute;
 background: #1e77ae;
 color: #fff;
 border-radius: 100%;
-font-size: 14px;
-height: 24px;
-line-height: 22px;
 text-align: center;
-width: 24px;
 pointer-events: all;
+z-index: 999;
+width:50px;
+height:50px;
+font-size: 18px;
+line-height: 40px;
+margin-top:0;
+top:5px;
+right:20px;
+margin-right:50px;
 }
 
 </style>
@@ -1428,6 +1432,7 @@ position: absolute;
 overflow: scroll;
 width:100vw;
 margin-top:-1vh;
+z-index: 99;
 vertical-align:middle; 
 pointer-events: none;
 }
@@ -1484,6 +1489,7 @@ width:100vw;
 margin:0px;
 vertical-align:middle; 
 opacity:1;
+z-index: 99;
 pointer-events:none;
 padding-bottom:300vh;/*stops stuttering*/
 padding-left:0.8%;
@@ -1588,6 +1594,7 @@ pointer-events: none;
 vertical-align:middle; 
 transform-style: preserve-3d;
 transform-origin: center center;
+z-index: 99;
 
 }
 
@@ -1628,6 +1635,7 @@ vertical-align:middle;
 background-repeat: no-repeat;
 background-size: cover 150%;
 border-top:2px solid white;
+z-index: 99;
 border-right: 2px solid rgba(220, 219, 219, 0.712);
 border-bottom: 2px solid rgba(33, 33, 33, 0.445);
 border-left: 2px solid rgba(136, 136, 136, 0.877);
@@ -1761,7 +1769,15 @@ z-index: 999;
 display: block;
 }
 .darkness{
-width:105%; height:104%; position:fixed; pointer-events:none;background: radial-gradient(circle, rgba(242,242,242,0) 0%, rgba(233,233,233,0) 79%, rgba(0,0,0,0.1567043920414306) 85%, rgba(0,0,0,1) 100%);z-index: 99999999999999;margin-top:-5%;margin-left:0%;mix-blend-mode: multiply
+z-index:9999999999999999999999;
+width:102%; 
+height:101vh; 
+position:absolute; 
+pointer-events:none;
+background: radial-gradient(circle, rgba(242,242,242,0) 0%, rgba(233,233,233,0) 52%, rgba(0,0,0,0.1567043920414306) 68%, rgba(0,0,0,1) 83%, rgba(0,0,0,1) 97%);
+margin-top:-1vh;
+margin-left:0%;
+backdrop-filter: contrast(1);
 }
 .headington{
 width:85%;
@@ -1854,9 +1870,9 @@ animation: flip 1s both ease-in-out;
 <body >
 
 <canvas class="webgl" ></canvas>
+<div class="darkness"></div>
 
-
-<div class="rex" style="pointer-events: none;position:absolute"></div>
+<div class="rex" style="pointer-events: none;position:absolute;display:none"></div>
 
 <ul class=" filters option-set combine" data-filter-group="EYESIZE" style="pointer-events: none;">
 
@@ -1914,7 +1930,7 @@ animation: flip 1s both ease-in-out;
 <iframe class="fetch_frame" src="HTMLS/AM_HTML/dist/index.html" style="width:100%;height:800px;pointer-events: all;margin-top:-120px;background-color: transparent;border:none;margin-left:-1%"></iframe> 
 
 </div> 
-<b class="popup-close js-popup-close" style="z-index: 10;">x</b>
+<b class="popup-close js-popup-close shade" style="z-index: 999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;">X</b>
 </div>
 
 <div class="grid tilterymain">
@@ -2107,7 +2123,7 @@ animation: flip 1s both ease-in-out;
 ⁡⁣⁣⁢<!-- AMAUR-->
 <div class="slideshow-container2_2 illus item even  medium brown black eight" style="pointer-events: none;">
 
-<p class="headington shade amaurobiidae">WSC_fetch_spiderfam:0043</p>
+<p class="headington shade Amaurobiidae"><a class="Amaurobiidae">spiderfam:0043</a></p>
 
 
 <!-- ____SLIDES ONE  AMAUR____-->
@@ -2519,7 +2535,7 @@ transform: 'translateX(' + lightX + 'px) translateY(' + lightY + 'px)',
 $body.on('mousemove', moveAd);
 </script>
 
-<!--3D GLB DESK-->
+<!--3D GLTF DESK BUBBLING MOUSETRACK-->
 <script src='js/js2/three.min.js'></script>
 
 <script type="module" src="./script3.js"></script>
@@ -2805,6 +2821,12 @@ passive: false
 
 </script>
 
-
+ <!--CLUBONIODAE-->
+ <script>
+    $.getJSON('https://wsc.nmbe.ch/api/lsid/urn:lsid:nmbe.ch:spiderfam:0043?apiKey=78dc74b032cc45e676c6979b31026a99wohSXylni4 ', function(data) {
+    var text = `${data.taxon.family}<br>`
+    $(".Amaurobiidae").html(text);
+    });
+    </script>
 </body>
 </html>
