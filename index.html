@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-<meta charset="UTF-8">
-<title>ISO4</title>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>ISO_GAL_clone</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="allow"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+
+
 
 <!--lilt-->
 <style>
@@ -33,24 +35,28 @@ box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
 border-radius: 3px;
 pointer-events: all;
 z-index: 99;
+margin-top:10%;
 
 
 }
 
 .popup-close {
 cursor: pointer;
-right: 5px;
-top: 5px;
 position: absolute;
 background: #1e77ae;
 color: #fff;
 border-radius: 100%;
-font-size: 14px;
-height: 24px;
-line-height: 22px;
 text-align: center;
-width: 24px;
 pointer-events: all;
+z-index: 999;
+width:50px;
+height:50px;
+font-size: 18px;
+line-height: 40px;
+margin-top:0;
+top:5px;
+right:20px;
+margin-right:50px;
 }
 
 </style>
@@ -404,6 +410,7 @@ font-size: 18px;
 transition: 0.6s ease;
 border-radius: 0 3px 3px 0;
 user-select: none;
+z-index: 9999999;
 }
 .upnext1 {
 
@@ -1428,6 +1435,7 @@ position: absolute;
 overflow: scroll;
 width:100vw;
 margin-top:-1vh;
+z-index: 99;
 vertical-align:middle; 
 pointer-events: none;
 }
@@ -1484,6 +1492,7 @@ width:100vw;
 margin:0px;
 vertical-align:middle; 
 opacity:1;
+z-index: 99;
 pointer-events:none;
 padding-bottom:300vh;/*stops stuttering*/
 padding-left:0.8%;
@@ -1588,6 +1597,7 @@ pointer-events: none;
 vertical-align:middle; 
 transform-style: preserve-3d;
 transform-origin: center center;
+z-index: 99;
 
 }
 
@@ -1628,6 +1638,7 @@ vertical-align:middle;
 background-repeat: no-repeat;
 background-size: cover 150%;
 border-top:2px solid white;
+z-index: 99;
 border-right: 2px solid rgba(220, 219, 219, 0.712);
 border-bottom: 2px solid rgba(33, 33, 33, 0.445);
 border-left: 2px solid rgba(136, 136, 136, 0.877);
@@ -1761,7 +1772,15 @@ z-index: 999;
 display: block;
 }
 .darkness{
-width:105%; height:104%; position:fixed; pointer-events:none;background: radial-gradient(circle, rgba(242,242,242,0) 0%, rgba(233,233,233,0) 79%, rgba(0,0,0,0.1567043920414306) 85%, rgba(0,0,0,1) 100%);z-index: 99999999999999;margin-top:-5%;margin-left:0%;mix-blend-mode: multiply
+z-index:9999999999999999999999;
+width:102%; 
+height:102vh; 
+position:absolute; 
+pointer-events:none;
+background: radial-gradient(circle, rgba(242,242,242,0) 0%, rgba(233,233,233,0) 52%, rgba(0,0,0,0.1567043920414306) 68%, rgba(0,0,0,1) 83%, rgba(0,0,0,1) 97%);
+margin-top:-2.4vh;
+margin-left:0%;
+backdrop-filter: contrast(1);
 }
 .headington{
 width:85%;
@@ -1854,9 +1873,9 @@ animation: flip 1s both ease-in-out;
 <body >
 
 <canvas class="webgl" ></canvas>
+<div class="darkness"></div>
 
-
-<div class="rex" style="pointer-events: none;position:absolute"></div>
+<div class="rex" style="pointer-events: none;position:absolute;display:none"></div>
 
 <ul class=" filters option-set combine" data-filter-group="EYESIZE" style="pointer-events: none;">
 
@@ -1901,7 +1920,7 @@ animation: flip 1s both ease-in-out;
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSF78nSy1ryAm5Q7W5IP9FBrwNiNQbnY60VSf4A6gZnofc6w3EnMnIS1zWVnuz56Mv6kacbZL2T0p_x/pubhtml?gid=0&single=true" style="width:100%; height:120%;pointer-events: all;"></iframe>
 </div>
 
-<b class="popup-close js-popup-close shade" style="z-index: 999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;">X</b>
+<b class="popup-close js-popup-close shade" style="z-index: 999999999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;">X</b>
 </div>
 
 
@@ -1914,10 +1933,10 @@ animation: flip 1s both ease-in-out;
 <iframe class="fetch_frame" src="HTMLS/AM_HTML/dist/index.html" style="width:100%;height:800px;pointer-events: all;margin-top:-120px;background-color: transparent;border:none;margin-left:-1%"></iframe> 
 
 </div> 
-<b class="popup-close js-popup-close" style="z-index: 10;">x</b>
+<b class="popup-close js-popup-close shade" style="z-index: 99999999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;cursor:pointer:pointer-events:all">X</b>
 </div>
 
-<div class="grid tilterymain">
+<div class="grid tilterymain" >
 <div class="tilt-container" style="pointer-events: none;">
 <div class="scroller" style="pointer-events: all;">
 <div class="grid-sizer" style="pointer-events: none;"></div>
@@ -2106,8 +2125,9 @@ animation: flip 1s both ease-in-out;
 
 ⁡⁣⁣⁢<!-- AMAUR-->
 <div class="slideshow-container2_2 illus item even  medium brown black eight" style="pointer-events: none;">
-
-<p class="headington shade amaurobiidae">WSC_fetch_spiderfam:0043</p>
+<div class="headington">
+<p class="amaurobiidae" style="display:inline-block;font">Fetching_id_gen_live</p>
+<button style="display:inline-block">Live-cross-check</button></div>
 
 
 <!-- ____SLIDES ONE  AMAUR____-->
@@ -2337,8 +2357,46 @@ animation: flip 1s both ease-in-out;
 
 <!--  ~=========================================  -->
 <!--  ~===== ===== SCRIPTS  ========   ======== ====== =========  -->
+<script>
+(function ($) {
+$(function () {
 
+$('.btn1').on('click', function () {
+$('#popup1').popup({
+time: 1000,
+classAnimateShow: 'slideInUp',
+classAnimateHide: 'fadeOut',
+onPopupClose: function e() {
+},
+onPopupInit: function e() {
+}
+});
+});
+$('.btn2').on('click', function () {
+$('#popup2').popup({
+time: 1000,
+classAnimateShow: 'slideInUp',
+classAnimateHide: 'fadeOut',
+onPopupClose: function e() {
 
+},
+onPopupInit: function e() {
+}
+});
+});
+
+});
+})(jQuery);
+</script>
+
+<!--AMAUROBIIDAE-->
+<script>
+  $.getJSON('https://rest.uniprot.org/taxonomy/2938851.json', function(data) {
+ var text = `${data.lineage[16].scientificName}<br>`
+ $(".amaurobiidae").html(text);
+  });
+ </script>
+ 
 <!--lilt ___compensates diff over screen-size-->
 <script>
 const tiltElement = document.querySelector('.grid');
@@ -2416,39 +2474,8 @@ slides2_2[slideIndex2_2-1].style.display = "block";
 </script>
 
 <!--POPUP JQ animation-->
-<script src="./js/jquery.popup.min.js" crossorigin="anonymous"></script>
+<script src="./js/jquery.popup.min.js"></script>
 
-<script>
-(function ($) {
-$(function () {
-
-$('.btn1').on('click', function () {
-$('#popup1').popup({
-time: 1000,
-classAnimateShow: 'slideInUp',
-classAnimateHide: 'fadeOut',
-onPopupClose: function e() {
-},
-onPopupInit: function e() {
-}
-});
-});
-$('.btn2').on('click', function () {
-$('#popup2').popup({
-time: 1000,
-classAnimateShow: 'slideInUp',
-classAnimateHide: 'fadeOut',
-onPopupClose: function e() {
-
-},
-onPopupInit: function e() {
-}
-});
-});
-
-});
-})(jQuery);
-</script>
 
 <script src="./js/321jquery.min.js"></script>
 
@@ -2519,7 +2546,7 @@ transform: 'translateX(' + lightX + 'px) translateY(' + lightY + 'px)',
 $body.on('mousemove', moveAd);
 </script>
 
-<!--3D GLB DESK-->
+<!--3D GLTF DESK BUBBLING MOUSETRACK-->
 <script src='js/js2/three.min.js'></script>
 
 <script type="module" src="./script3.js"></script>
@@ -2805,6 +2832,12 @@ passive: false
 
 </script>
 
-
+ <!--CLUBONIODAE-->
+ <script>
+    $.getJSON('https://wsc.nmbe.ch/api/lsid/urn:lsid:nmbe.ch:spiderfam:0043?apiKey=78dc74b032cc45e676c6979b31026a99wohSXylni4', function(data) {
+    var text = `${data.taxon.family}<br>`
+    $(".Amaurobiidae").html(text);
+    });
+    </script>
 </body>
 </html>
