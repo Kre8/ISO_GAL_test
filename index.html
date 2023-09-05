@@ -1933,7 +1933,9 @@ animation: flip 1s both ease-in-out;
 <iframe class="fetch_frame" src="HTMLS/AM_HTML/dist/index.html" style="width:100%;height:800px;pointer-events: all;margin-top:-120px;background-color: transparent;border:none;margin-left:-1%"></iframe> 
 
 </div> 
-<b class="popup-close js-popup-close shade" style="z-index: 99999999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;cursor:pointer:pointer-events:all">X</b>
+
+<b class="popup-close js-popup-close shade" style="z-index: 999;width:50px;height:50px;font-size: 18px;line-height: 40px;margin-top:0;position:absolute;pointer-events: all;margin-right:50px;">X</b>
+
 </div>
 
 <div class="grid tilterymain" >
@@ -2125,9 +2127,10 @@ animation: flip 1s both ease-in-out;
 
 ⁡⁣⁣⁢<!-- AMAUR-->
 <div class="slideshow-container2_2 illus item even  medium brown black eight" style="pointer-events: none;">
-<div class="headington">
-<p class="amaurobiidae" style="display:inline-block;font">Fetching_id_gen_live</p>
-<button style="display:inline-block">Live-cross-check</button></div>
+
+
+<p class="headington shade Amaurobiidae"><a class="Amaurobiidae">spiderfam:0043</a></p>
+
 
 
 <!-- ____SLIDES ONE  AMAUR____-->
@@ -2834,7 +2837,8 @@ passive: false
 
  <!--CLUBONIODAE-->
  <script>
-    $.getJSON('https://wsc.nmbe.ch/api/lsid/urn:lsid:nmbe.ch:spiderfam:0043?apiKey=78dc74b032cc45e676c6979b31026a99wohSXylni4', function(data) {
+
+    $.getJSON('https://wsc.nmbe.ch/api/lsid/urn:lsid:nmbe.ch:spiderfam:0043?apiKey=78dc74b032cc45e676c6979b31026a99wohSXylni4 ', function(data) {
     var text = `${data.taxon.family}<br>`
     $(".Amaurobiidae").html(text);
     });
